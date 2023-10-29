@@ -1,0 +1,61 @@
+paths:
+  /api/user/{uid}:
+    put:
+      summary: Editar un Usuario.
+      tags:
+        - Users
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: Id del usuario que se desea editar.
+          schema:
+            $type: String
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/requestBodies/PutUser'
+      responses:
+        "200":
+          description: La operacion fue exitosa!!
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#components/schemas/User'
+
+        "400":
+          description: Se envio un dato no esperado.
+        "500":
+          description: Error inesperado en el server, no se pudo manejar el proceso.
+  /api/user/premium/{uid}:
+    put:
+      summary: Editar el rol de un usuario a Premium o User.
+      tags:
+        - Users
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: Id del usuario que se desea editar.
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: La operacion fue exitosa!!
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#components/schemas/User'
+
+        "400":
+          description: Se envio un dato no esperado.
+        "500":
+          description: Error inesperado en el server, no se pudo manejar el proceso.
+  
+  

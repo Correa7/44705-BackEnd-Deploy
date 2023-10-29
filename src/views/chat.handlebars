@@ -1,0 +1,30 @@
+<div class="box">
+        <h2>Esto es Chat, handlebars</h2><br><br>
+    <div class="container">
+    {{!-- La caja es donde se van a ir pintando los msjs --}}
+        <div class="chat-box p-3 mb-2 bg-dark text-white">
+            <div id="caja"></div>
+        </div><br><br>
+
+    {{!-- Bootstrap Form --}}
+        <div class="form-box">
+            {{!-- en form es necesario el onSubmit que va a hacer referencia a una funcion que vamos a crear en el index del cli  ente --}}
+            <form onsubmit="return addMessage()" class="p-3 mb-2 bg-dark text-white" style="height: 300px;">     
+                <div class="mb-3">
+                    {{!-- <label for="username" class="form-label">Name</label> --}}
+                    <input type="text" class="form-control" id="username" placeholder="Your email....">
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" id="message" rows="6"  placeholder="Your message..."></textarea>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit" >Send</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="/socket.io/socket.io.js"></script> 
+{{!-- ahora nos vamos al index.js del cliente, a configurare el soket --}}
+<script src="/js/chat.js"></script>

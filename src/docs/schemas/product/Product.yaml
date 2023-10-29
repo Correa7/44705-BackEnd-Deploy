@@ -1,0 +1,46 @@
+components:
+  schemas:
+    Product:
+      type: object
+      properties:
+        _id:
+          type: ObjectId
+          description: Id autogenerado por MongoDB 
+        title:
+          type: String
+          description: Nombre del Producto.
+        description:
+          type: String
+          description: descripcion del Producto.
+        price:
+          type: Number
+          description: Precio del Producto.
+        thumbnail:
+          type: String
+          description: Imagen del Prodcuto.
+        code:
+          type: String
+          description: Codigo del Producto.
+        stock:
+          type: Number
+          description: Stock del Producto
+        category:
+          type: String
+          description: Categoria del Producto.
+        status:
+          type: Boolean
+          description: Si existe stock del Producto (true,false).
+        owner:
+          type: String
+          description: Creador del Producto.
+      example:
+        _id: ObjectId("647fa8c9e46dbc5a20320181")
+        title: Producto de prueba 1
+        description: Descripcion de prueba 1
+        price: 755
+        thumbnail: Url de la imagen del Producto.
+        code: AXC125
+        stock: 50
+        category: Electrodomestico
+        status: true 
+        owner: admin@admin.com.ar

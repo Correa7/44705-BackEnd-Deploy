@@ -1,0 +1,64 @@
+components:
+  requestBodies:
+    PostUser:
+      type: object
+      required:
+        - firtsName
+        - lastName
+        - email
+        - age
+      properties:
+        firstName:
+          type: String
+          description: Nombre del usuario
+        lastName:
+          type: String
+          description: Apellido del usuario
+        email:
+          type: String
+          description: Email del usuario
+        age:
+          type: Number
+          description: Edad del usuario
+        password:
+          type: String
+          description: Contraseña del usuario.
+      example:
+        firstName: Nombre de prueba 1
+        lastName: Apellido de prueba 1
+        email: correodeprueba1@gmail.com
+        age: 18
+        password: 123456
+    PutUser:
+      type: object
+      required:
+        - firtsName
+        - lastName
+        - email
+        - age
+      properties:
+        firstName:
+          type: String
+          description: Nombre del usuario
+        lastName:
+          type: String
+          description: Apellido del usuario
+        email:
+          type: String
+          description: Email del usuario
+        age:
+          type: Number
+          description: Edad del usuario
+        rol:
+          type: String
+          description: Rol del usuario (Admin,Premium,User)
+        password:
+          type: String
+          description: Contraseña del usuario
+      example:
+        firstName: Nombre de prueba 1
+        lastName: Apellido de prueba 1
+        email: correodeprueba1@gmail.com
+        age: 18
+        rol: User
+        password: 123456

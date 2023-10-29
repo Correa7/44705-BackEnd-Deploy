@@ -1,0 +1,12 @@
+<br><br>
+
+<div class="container">
+    {{#if data}}
+    <h3>Bienvenido {{data.firstName}} {{data.lastName}}</h3><br>
+    <h4>Email: {{data.email}}</h4>
+    {{else}}
+    <h3>Datos no enviados</h3>
+    {{/if}} 
+    <br><br>
+    <a href="/session/logout">Logout</a>
+</div>

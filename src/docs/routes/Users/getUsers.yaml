@@ -1,0 +1,48 @@
+paths:
+  /api/user/:
+    get:
+      summary: Obtiene todos los usuarios disponibles en la App
+      tags:
+        - Users
+      responses:
+        "200":
+          description: La operacion fue exitosa!!
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#components/schemas/User'
+
+        "400":
+          description: Se envio un dato no esperado.
+        "500":
+          description: Error inesperado en el server, no se pudo manejar el proceso.
+  
+  /api/user/{uid}:
+    get:
+      summary: Obtiene un usuarios disponible en la App por ID.
+      tags:
+        - Users
+      parameters:
+        - name: uid
+          in: path
+          required: true
+          description: Id del usuario que se desea buscar.
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: La operacion fue exitosa!!
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#components/schemas/User'
+
+        "400":
+          description: Se envio un dato no esperado.
+        "500":
+          description: Error inesperado en el server, no se pudo manejar el proceso.
+  

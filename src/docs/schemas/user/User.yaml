@@ -1,0 +1,60 @@
+components:
+  schemas:
+    User:
+      type: object
+      properties: 
+        _id:
+          type: ObjectId
+          description: Id autogenerado por MongoDB 
+        firstName:
+          type: String
+          description: Nombre del usuario
+        lastName:
+          type: String
+          description: Apellido del usuario
+        email:
+          type: String
+          description: Email del usuario
+        age:
+          type: Number
+          description: Edad del usuario
+        rol:
+          type: String
+          description: Rol del usuario (Admin,Premium,User)
+        cart:
+          type: String
+          description: Id del carrito del usuario
+        password:
+          type: String
+          description: Contraseña del usuario
+        last_connection:
+          type: String
+          description: Ultima sesion del Usuario
+        documents:
+          type: Array
+          description: Array de Documentos
+          items:
+            type: Object
+            items:
+              name:
+                type: String
+                description: Nombre del Documento
+              reference:
+                type: String
+                description: Ruta al Documento 
+      example:
+        _id: ObjectId("647fa8c9e46dbc5a20320181")
+        firstName: Usuario de prueba 1
+        lastName: Apellido de prueba 1
+        email: correodeprueba1@gmail.com
+        age: 18
+        rol: User
+        cart: 182fa8c9e46dbc5a2032e925 
+        password: 123456
+        last_connection: Tue Oct 24 2023 00:19:24 GMT-0300 (hora estándar de Argentina)
+        documents: [
+            {
+            name:'documeto.txt', 
+            reference:'public/folder/user/document/documento.txt'
+            }
+          ]

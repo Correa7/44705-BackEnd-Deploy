@@ -1,0 +1,3 @@
+error: Prueba de log level warn!
+fatal: Prueba de log level Fatal!
+error: Prueba de log level Error!

@@ -1,0 +1,14 @@
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 40px;
+}
+.error{
+    height: 350px;
+    width: 500px;
+}
+.wrong{
+    height: 400px;
+    width: 600px;
+}

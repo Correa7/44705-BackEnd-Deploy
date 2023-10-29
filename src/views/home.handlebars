@@ -1,0 +1,19 @@
+ <div class="container">
+    <h4 class="title">Esto es Home</h4>
+ </div>
+ <div class="contenedor-cards">   
+    {{#each products}}
+             <div class="card" style="width: 15rem;">
+            <img src="https://via.placeholder.com/180x180" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                   <p class="card-text">Description: {{this.description}}</p>
+                <p class="card-text">Price: $<strong>{{this.price}}</strong>  || stock: {{this.stock}}</p>
+            </div>
+            <div class="card-body">
+            <button id="{{this._id}}" class="btn btn-primary">Go somewhere</button>
+            </div>
+        </div>
+     
+    {{/each}}
+</div>

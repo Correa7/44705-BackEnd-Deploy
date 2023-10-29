@@ -1,0 +1,26 @@
+.title{
+    display: flex;
+    flex-direction:row;
+    justify-content: center;
+    align-content: center;
+    padding: 5px;
+    margin-top:25px;
+    margin-bottom: 25px;
+    margin-left: 50px;
+}
+.box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 5px;
+    margin-left: 50px; 
+}
+.form{
+    border: solid;
+    border-color: rgb(120, 151, 181);
+    padding: 25px;
+}
+.message{
+    color: red;
+}

@@ -1,0 +1,92 @@
+# NewProduct
+components:
+  requestBodies:
+    PostProduct:
+      type: object
+      required:
+        - title
+        - description
+        - price
+        - code
+        - stock
+      properties:
+        title:
+          type: String
+          description: Nombre del Producto.
+        description:
+          type: String
+          description: descripcion del Producto.
+        price:
+          type: Number
+          description: Precio del Producto.
+        thumbnail:
+          type: String
+          description: Imagen del Prodcuto.
+        code:
+          type: String
+          description: Codigo del Producto.
+        stock:
+          type: Number
+          description: Stock del Producto
+        category:
+          type: String
+          description: Categoria del Producto.
+        status:
+          type: Boolean
+          description: Si existe stock del Producto (true,false).
+        owner:
+          type: String
+          description: Creador del Producto.
+      example:
+        title: desktop computer
+        descriptiom: Description example
+        price: 123.78
+        thumbnail: Url de la imagen del Producto.
+        code: AXC125
+        stock: 50
+        category: Electrodomestico
+        status: true 
+        owner: admin@admin.com.ar
+    PutProduct:
+      type: object
+      required:
+        - title
+        - description
+        - price
+        - code
+        - stock
+      properties:
+        title:
+          type: String
+          description: Nombre del Producto.
+        description:
+          type: String
+          description: descripcion del Producto.
+        price:
+          type: Number
+          description: Precio del Producto.
+        thumbnail:
+          type: String
+          description: Imagen del Prodcuto.
+        code:
+          type: String
+          description: Codigo del Producto.
+        stock:
+          type: Number
+          description: Stock del Producto
+        category:
+          type: String
+          description: Categoria del Producto.
+        status:
+          type: Boolean
+          description: Si existe stock del Producto (true,false).
+      example:
+        title: desktop computer
+        descriptiom: Description example
+        price: 123.78
+        thumbnail: Url de la imagen del Producto.
+        code: AXC125
+        stock: 50
+        category: Electrodomestico
+        status: true 
+        

@@ -1,0 +1,13 @@
+.box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; 
+    margin: 40px;
+    height: 200px;
+    border: solid;
+    border-color: red;
+}
+h5{
+    color:red;
+}

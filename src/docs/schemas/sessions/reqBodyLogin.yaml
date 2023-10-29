@@ -1,0 +1,17 @@
+components:
+  requestBodies:
+    PostLogin:
+      type: object
+      required:
+        - email
+      properties:
+        email:
+          type: String
+          description: Email del usuario
+        password:
+          type: String
+          description: Contraseña del usuario.
+      example:
+        email: admin@admin.com.ar
+        password: '123'
+   

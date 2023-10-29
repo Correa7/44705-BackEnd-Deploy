@@ -1,0 +1,99 @@
+<!-- Section: Design Block -->
+<section class="text-center">
+  <!-- Background image -->
+  <div class="p-5 bg-image" style="
+        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
+        height: 150px;
+        "></div>
+  <!-- Background image -->
+
+  <div class="card mx-4 mx-md-5 shadow-5-strong" style="
+        margin-top: -100px;
+        background: hsla(0, 0%, 100%, 0.8);
+        backdrop-filter: blur(30px);
+        ">
+    <div class="card-body py-5 px-md-5">
+
+      <div class="row d-flex justify-content-center">
+        <div class="col-lg-8">
+          <h2 class="fw-bold mb-5">Sign up now</h2>
+
+          {{!-- Form --}}
+          <form action="/session/register" method="post">
+            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <div class="row">
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input type="text" id="firstName" class="form-control" name="firstName" required/>
+                  <label class="form-label" for="firstName">First name</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input type="text" id="lastName" class="form-control" name="lastName" required/>
+                  <label class="form-label" for="lastName">Last name</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input type="number" id="age" class="form-control" name="age" required/>
+                  <label class="form-label" for="age">Age</label>
+                </div>
+              </div>
+              <div class="col-md-6 mb-4">
+                <div class="form-outline">
+                  <input type="text" id="email" class="form-control" name="email" required/>
+                  <label class="form-label" for="email">Email address</label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <input type="password" id="password" class="form-control" name="password" required/>
+              <label class="form-label" for="password">Password</label>
+            </div>
+
+            {{!-- <div class="form-outline mb-4">
+              <input type="password" id="password2" class="form-control" name="password2" required/>
+              <label class="form-label" for="password2">Repeat Password</label>
+            </div> --}}
+
+            <!-- Checkbox -->
+            <div class="form-check d-flex justify-content-center mb-4">
+              <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
+              <label class="form-check-label" for="form2Example33">
+                Subscribe to our newsletter
+              </label>
+            </div>
+
+            <!-- Submit button -->
+             <a class="singup" href="#">
+              <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
+            </a>
+            <!-- Register buttons -->
+            <div class="text-center">
+              <p>or sign up with:</p>
+              <button type="button" class="btn btn-link btn-floating mx-1">
+               <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </button>
+
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <a href="#"><i class="fab fa-google"></i></a>
+              </button>
+
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </button>
+
+              <button type="button" class="btn btn-link btn-floating mx-1">
+                <a href="/auth/github"><i class="fab fa-github"></i></a> 
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Section: Design Block -->

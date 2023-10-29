@@ -1,0 +1,11 @@
+paths:
+  /session/current/:
+    get:
+      summary: Datos de la sesion activa del usuario
+      responses:
+        "200":
+          description: La operacion fue exitosa!!
+        "400":
+          description: Se envio un dato no esperado.
+        "500":
+          description: Error inesperado en el server, no se pudo manejar el proceso.

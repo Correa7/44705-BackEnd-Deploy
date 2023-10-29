@@ -1,0 +1,74 @@
+paths:
+  /api/cart/:
+    get:
+      summary: Obtiene todos los carros disponibles en la App
+      tags:
+        - Carts
+      responses:
+        "200":
+          description: La operacion fue exitosa!!
+          content:
+            application/json:
+              schema:
+                type: array
+                items: 
+                  $ref: '#components/schemas/Cart'
+
+        "400":
+          description: Se envio un dato no esperado.
+        "500":
+          description: Error inesperado en el server, no se pudo manejar el proceso.
+  
+  /api/cart/{cid}:
+    get:
+      summary: Obtiene un carro disponible en la App por ID.
+      tags:
+        - Carts
+      parameters:
+        - name: cid
+          in: path
+          required: true
+          description: Id del carro que se desea buscar.
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: La operacion fue exitosa!!
+          content:
+            application/json:
+              schema:
+                type: object
+                items: 
+                  $ref: '#components/schemas/Cart'
+
+        "400":
+          description: Se envio un dato no esperado.
+        "500":
+          description: Error inesperado en el server, no se pudo manejar el proceso.
+  
+  /api/cart/{cid}/purchase:
+    get:
+      summary: Obtiene un Ticket asociado al carro.
+      tags:
+        - Carts
+      parameters: 
+        - name: cid
+          in: path
+          required: true
+          description: Id del ticket que se desea buscar.
+          schema:
+            $type: String
+      responses:
+        "200":
+          description: La operacion fue exitosa!!
+          content:
+            application/json:
+              schema:
+                type: object
+                items: 
+                  $ref: '#components/schemas/Cart' 
+
+        "400":
+          description: Se envio un dato no esperado.
+        "500":
+          description: Error inesperado en el server, no se pudo manejar el proceso.

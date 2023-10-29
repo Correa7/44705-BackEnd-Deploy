@@ -1,0 +1,57 @@
+<section class="vh-100"><br>
+  <div class="message">
+    <h5> {{message}}</h5>
+  </div><br>
+  <div class="container-fluid ">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-9 col-lg-6 col-xl-5">
+        {{!-- Form --}}
+        <form method="post" action="/session/login" >
+          <div class="d-flex align-items-center justify-content-center">
+            <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+             <button type="button" class="btn btn-link btn-floating mx-1">
+                <a href="/auth/github"><i class="fab fa-github"></i></a> 
+              </button>
+          </div>
+          <br>
+
+          <div class="d-flex flex-row align-items-center justify-content-center">
+            <p class="text-center fw-bold mx-3 mb-0">Or</p>
+          </div><br>
+
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+            <input type="email" id="email" class="form-control form-control-lg"
+              placeholder="Enter a valid email address" name="email" required/>
+            {{!-- <label class="form-label" for="email">Email address</label> --}}
+          </div>
+
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+            <input type="password" id="password" class="form-control form-control-lg"
+              placeholder="Enter password" name="password" required/>
+            {{!-- <label class="form-label" for="password">Password</label> --}}
+          </div>
+          <br>
+          <div class="d-flex justify-content-between align-items-center">
+            <a href="/api/email/forgot-password" class="text-body">Forgot password?</a>
+          </div>
+          <div class="text-center text-lg-start mt-4 pt-2">
+            <a href="/session/profile"> 
+            <button type="submit" class="btn btn-primary btn-lg"
+              style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+            </a>
+
+            <h6 class=" fw-bold mt-2 pt-1 mb-0">Don't have an account? <a href="/session/register"
+                class="link-danger">Register</a></h6>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

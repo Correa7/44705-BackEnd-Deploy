@@ -1,0 +1,32 @@
+.box{
+    border: solid black 3px;
+    margin: 50px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+}
+.chat-box{
+    border: solid black 3px;
+    width: 60%;
+    height: 300px;
+    /* margin-right: 20px; */
+    overflow-y: auto;
+   
+}
+#caja{
+    display: flex;
+    flex-direction: column;
+}
+.form-box{
+    height:300px;
+    width: 35%;
+}

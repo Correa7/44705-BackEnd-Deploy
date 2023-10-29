@@ -1,0 +1,79 @@
+<div class="box">
+    <div>
+        <h1>{{message}}</h1>
+    </div>
+    <br><br>
+    <div class="box-delIactive">
+        <h6>To delete all inactive users <button class="link" onclick="delInactiveUsers()">click here</button></h6>
+    </div>
+    {{#if active}}
+    <div class="box-active">
+        <div><h4 class="title-active">Active Users</h4></div>
+        <div class="box-table">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Rol</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Change rol</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each active}}
+                    <tr>
+                    <td><p>{{this.firstName}} {{this.lastName}}</p></td>
+                    <td><p class="table-title-active">{{this.email}}</p></td>
+                    <td><p>{{this.rol}}</p></td>
+                    <td><p><strong>{{this._id}}</strong></p></td>
+                    <td><button class="link" onclick="delUser('{{this._id}}')"><img class="trash-icon" src="/images/icons8-trash-48.png" alt="Trach icon"></button></td>
+                    <td><button class="link" onclick="rolUser('{{this._id}}')"><img class="trash-icon" src="/images/icons8-star-64.png" alt="Trach icon"></button></td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{/if}}
+    <br><br>
+
+    {{#if inactive}}
+        <div class="box-inactive">
+            <div><h4 class="title-inactive">Inactive Users</h4></div>
+            <div class="box-table">
+                <table class="table table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Rol</th>
+                        <th scope="col">ID</th>
+                        <th scope="col">Delete</th>
+                        <th scope="col">Change rol</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{#each inactive}}
+                        <tr>
+                        <td><p >{{this.firstName}} {{this.lastName}}</p></td>
+                        <td><p class="table-title-inactive">{{this.email}}</p></td>
+                        <td><p >{{this.rol}}</p></td>
+                        <td><p ><strong>{{this._id}}</strong></p></td>
+                        <td><button class="link" onclick="delUser('{{this._id}}')"><img class="trash-icon" src="/images/icons8-trash-48.png" alt="Trach icon"></button></td>
+                        <td><button class="link" onclick="rolUser('{{this._id}}')"><img class="trash-icon" src="/images/icons8-star-64.png" alt="Trach icon"></button></td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    {{/if}}
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/js/adminpanel.js"></script>
+
+                        
