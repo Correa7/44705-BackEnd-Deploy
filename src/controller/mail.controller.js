@@ -111,17 +111,13 @@ const sendResetPass = async (req,res)=>{
             to: userEmail,
             subject: "Correo de recuperacion de contraseña - Clase 37",
             html: `
-                    <div>
+                    <div class="container">
                         <h3>Hello</h3>
                         <h3>We have sent you this email in response to your request to reset your password on company name.</h3><br>
                         <h3>To reset your password, please follow the link below:</h3>
                         <br>
                         <br>
-                        <p>Token de Seguridad:</p>
-                        <p> ${token} </p>
-                        <br>
-                        <br>
-                        <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="http://localhost:8080/api/email/reset-form/?token=${token}">Click here to Reset your Password</a>
+                        <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="https://44705-backend-deploy-production.up.railway.app//api/email/reset-form/?token=${token}">Click here to Reset your Password</a>
                         <br>
                         <br>
                         <br>
