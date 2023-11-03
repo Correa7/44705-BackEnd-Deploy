@@ -167,7 +167,7 @@ const resetPass = async (req,res)=>{
            return res.status(401).render("resetPass", {
                 style: "resetPass.css",
                 title: "Info",
-                message:'Ingresa un password diferente al que tenias',
+                message:'Enter a different password than the one you had!',
                 token:token
               });
         }

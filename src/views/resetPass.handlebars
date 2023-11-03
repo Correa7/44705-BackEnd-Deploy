@@ -1,6 +1,13 @@
-<div class="title">
-    <h4>Enter your Email, your new password !</h4>
-</div><br>
+{{#if message}}
+        <div class="title">
+        <h4 style="background-color:rgb(0, 0, 0);">{{message}}</h4>
+        </div>
+{{else}}
+    <div class="title">
+        <h4 style="background-color:rgb(0, 0, 0);">Enter your Email, your new password !</h4>
+    </div>
+{{/if}}
+<br>
 <div class="container"> 
 
     <div class="box">
