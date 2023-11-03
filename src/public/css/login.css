@@ -69,6 +69,11 @@ html {
     background: hsla(0, 0%, 100%, 0.8);
     backdrop-filter: blur(30px);
  }
+ .message{
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+ }
 .cart-box{
     display: flex;
     flex-direction: row;
