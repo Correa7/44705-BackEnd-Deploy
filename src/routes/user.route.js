@@ -24,7 +24,7 @@ router.delete('/',goToLogin, isAdmin, delUsers);
 router.put('/:uid',goToLogin, isAdmin, putUserById); 
 router.put('/premium/:uid',rolUserById );
 router.post('/:uid/documents',goToLogin, usersUploader(), userDocuments); 
-router.delete('/:uid/documents',goToLogin, deleteDocuments);  
+router.delete('/:uid/documents',goToLogin, deleteDocuments);   
 
  
 module.exports = router;

@@ -5,15 +5,55 @@ html {
     box-shadow: 0 0 10% 10% black;
     color: #dff2b0;
 }
+#navbarSupportedContent{
+    align-items: center;
+    justify-content: center;
+ }
+ body{
+    position: relative;
+    min-height: 100vh;
+    background-color: rgb(60, 38, 43);
+    background-image: url('https://img.freepik.com/fotos-premium/altavoz-tela-malla-detalle-tela-negra-amplificador_43029-1330.jpg?w=826');
+    font-family: 'Raleway', sans-serif;
+    color:rgb(225, 225, 176);
+}
+.navbar{
+    height: 60px;
+    padding-bottom: 15px;
+    font-family: 'Raleway', sans-serif;
+    color:rgb(225, 225, 176); 
+    background-color: black;  
+}
+.navbar a {
+    color:rgb(225, 225, 176);  
+}
+ p a h1 h2 h3 h4 h5 h6{
+    font-family: 'Raleway', sans-serif;
+ }
+ 
+ footer{
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+     background-color: black;
+   
+ }
 .box{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
-    padding: 20px; 
+    padding: 20px;
+    border-radius: 10px;
+    border: solid rgb(205, 203, 199) ;
+    transition: all 0.25s;
+    font-family: sans-serif;
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(30px); 
 }
 .box h1 {
-    color: rgb(90, 142, 209);
+    color:rgb(225, 225, 176);
+    font-family: 'Raleway', sans-serif;
 }
 .box-delIactive{
     display: flex;
@@ -21,6 +61,7 @@ html {
     justify-content: center;
     align-items: center;
     padding-top: 15px;
+    color: black;
 }
 .box-active{
   
@@ -33,7 +74,8 @@ html {
     padding-top: 15px;
 }
 .title-active{
-    color:rgb(55, 225, 12);
+    color:rgb(0, 0, 0);
+    font-family: 'Raleway', sans-serif;
 }
 .box-inactive{
   
@@ -46,13 +88,12 @@ html {
     padding-top: 15px;
 }
 .title-inactive{
-    color:rgb(236, 10, 6);
+    color:rgb(0, 0, 0);
+    font-family: 'Raleway', sans-serif;
 }
 
 .box-table{
 	padding: 40px;
-	/* margin: 40px; */
-    /* box-shadow: 0 12px 16px  rgb(55, 225, 12); */
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -84,4 +125,15 @@ html {
 .trash-icon{ 
     width: 20px;
     height: 20px;
+}
+.btn{
+    background-color: rgb(60, 38, 43);
+    color: white;
+}
+.btn:hover{
+    color: rgb(60, 38, 43);
+    border: solid ;
+    border-color:rgb(60, 38, 43) ;
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(30px);
 }

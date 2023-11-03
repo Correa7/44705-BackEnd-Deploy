@@ -1,3 +1,56 @@
+html {
+    font-family: 'Raleway', sans-serif;
+    background-size: 100%;
+    background-color: black;
+    box-shadow: 0 0 10% 10% black;
+    color: #dff2b0;
+}
+#navbarSupportedContent{
+    align-items: center;
+    justify-content: center;
+ }
+ body{
+    position: relative;
+    min-height: 100vh;
+    background-color: rgb(60, 38, 43);
+    background-image: url('https://img.freepik.com/fotos-premium/altavoz-tela-malla-detalle-tela-negra-amplificador_43029-1330.jpg?w=826');
+    font-family: 'Raleway', sans-serif;
+    color:rgb(225, 225, 176);
+}
+.navbar{
+    height: 60px;
+    padding-bottom: 15px;
+    font-family: 'Raleway', sans-serif;
+    color:rgb(225, 225, 176); 
+    background-color: black; 
+}
+.navbar a {
+    color:rgb(225, 225, 176);  
+}
+ p a h1 h2 h3 h4 h5 h6{
+    font-family: 'Raleway', sans-serif;
+ }
+ 
+ footer{
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+     background-color: black;
+   
+ }
+.cart-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.cartP{
+    color: aliceblue;
+    text-decoration: none;
+    padding-top: 10px;
+    margin-left: 5px;
+    font-family: 'Raleway', sans-serif;
+}
 .box{
     border: solid black 3px;
     margin: 50px;
@@ -6,6 +59,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(30px);
+    color:black
     
 }
 .container{
@@ -29,4 +85,10 @@
 .form-box{
     height:300px;
     width: 35%;
+}
+.btn-cart{
+    color: white;
+}
+.btn-cart:hover{
+    color: rgb(230, 14, 64);
 }

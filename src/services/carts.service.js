@@ -20,12 +20,7 @@ class CartService {
   }
   async addCart() {
     try {
-      // const tiempoTranscurrido = Date.now();
-      // const hoy = new Date(tiempoTranscurrido);
-      // data.date = hoy.toDateString() + ' ' + uuid4()
-      // console.log(data.date);
       let newCart = await CartMethods.create({ products: [] }) 
-      // let newCart = await CartMethods.create() 
       console.log('Cart was created succesfully');  
       return newCart;
     } catch (error) {  
@@ -44,7 +39,6 @@ class CartService {
     try {
 
       const cart = await CartMethods.updateOne(_id);  
-      // const cart = await this.getCartById(_id)
       return cart;   
     } catch (error) {
       throw new Error(error.message);
@@ -54,7 +48,6 @@ class CartService {
     try {
       await CartMethods.delete(_id);
       const cart ='Delete cart in service' 
-      // const cart = await this.getCartById(_id)
       return cart;   
     } catch (error) {
       throw new Error(error.message);
@@ -74,7 +67,6 @@ class CartService {
       else{ 
 
             let cart = await CartMethods.findOne(cartId);
-            console.log(cart)
             let existingProduct = cart.products.find((pId) => pId.idProduct.equals(productId));
        
             if (existingProduct) { 
@@ -117,17 +109,14 @@ class CartService {
   }
   async updateCart(cartId, productId, cartByUser) {
     try {
-      if (productId === null) {
-        //modifica carrito nuevo
+      if (productId === null) { 
         let cart = await CartMethods.findOne(cartId)
         let newCart = cart.products = cartByUser.products
         await cart.save();
         console.log(`The products of cart with id:${cartId} was updated succesfuly`)
         return newCart;
       } else {
-        //modifica cantidad
         let cart = await CartMethods.findOne(cartId)
-
         let existingProduct = cart.products.find((pId) => pId.idProduct.equals(productId));
         if (existingProduct) {
           existingProduct.quantity = cartByUser.quantity
@@ -173,23 +162,17 @@ class CartService {
         // let prodLessStock = []
 
         productsData.map((prod, index) => {
-          //Si No hay stock del producto
           if (productsQuantity[index] > prod.stock) {
-            //Lo pusheamos al array para luego modificar el cart
             prodOutStock.push({
               idProduct: prod._id,
               quantity: productsQuantity[index]
             });
           } 
 
-          else { //Si hay stock del product
-            //este va a ser el nuevo stock del producto 
+          else { 
             let newStock = prod.stock - (productsQuantity[index])
-
-            //Multiplicamos el precio por la cantidad y lo sumamos al total
             let priceProduct = prod.price * (productsQuantity[index])
             amount += priceProduct
-            //pusheamos al array para luego modificar el stock del producto con el nuevo stock
             prodStock.push({
               idProduct: prod._id,
               stock: newStock
@@ -197,13 +180,10 @@ class CartService {
 
           }
         })
-
-        //Usamos .createTicket y  Creamos el ticket
-
         const ticket = await ticketService.createTicket({
           amount,
-          purchaser: user,//Este es el email del user que lo sacamos de req.session
-          // cartId
+          purchaser: user,
+         
         })
 
         return {

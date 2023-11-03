@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
     auth: {
         user:gmailAccount,
         pass:gmailAppPass 
-    }
+    } 
 })
 // verificar conexion con gmail
 transporter.verify(function (error, success) {
@@ -87,7 +87,7 @@ const forgotPass = (req,res)=>{
         style: "recovery.css",
         title: "Recovery Pass Form"  
     }) 
-
+  
 } 
 const sendResetPass = async (req,res)=>{
     try{ 

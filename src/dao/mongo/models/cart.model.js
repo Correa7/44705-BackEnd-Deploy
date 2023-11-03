@@ -1,6 +1,6 @@
 const mongoose= require('mongoose')
 const cartPaginate = require('mongoose-paginate-v2')
-const uuid4 = require('uuid4') 
+
 
 const CartSchema = new mongoose.Schema({  
   products: [{

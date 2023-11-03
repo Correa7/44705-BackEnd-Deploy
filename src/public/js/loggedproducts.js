@@ -4,7 +4,7 @@ function warningRol() {
         icon: 'success',
         title: 'Product Add to Cart',
         showConfirmButton: false,
-        timer: 1500
+        timer: 1000
       })
   }
   function warningError() {
@@ -13,12 +13,12 @@ function warningRol() {
         icon: 'error',
         title: 'Error to add Product to Cart',
         showConfirmButton: false,
-        timer: 1500
+        timer: 1000
       })
   }
-const existingCart = document.querySelector(".userCart");
+const existingCart = document.querySelector(".userCart"); 
 
-const API_URL = "http://localhost:8080/api/cart"   
+const API_URL = "http://44705-backend-deploy-production.up.railway.app/api/cart"   
   
 async function addProductToCart(id){
     const url = API_URL + `/${existingCart?.id}/product/${id}`
@@ -39,7 +39,7 @@ async function addProductToCart(id){
       
         setTimeout(() => {
             location.reload();
-          }, 2000) 
+          }, 500) 
     })
     .catch((error)=>{
         console.error("Error:", error)
@@ -48,7 +48,7 @@ async function addProductToCart(id){
     warningError()
     setTimeout(() => {
         location.reload();
-      }, 2000) 
+      }, 500) 
     }
 
 

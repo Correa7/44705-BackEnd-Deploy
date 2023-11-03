@@ -50,58 +50,7 @@ function connectSocket(httpServer){
             throw new Error(error.message);   
             
         })
-        // try {
-        //     let pid = data;
-        //     let product = await productService.getProductById(pid)
-        //     console.log(product)
-        //     let owner = await Service.getByEmail(product.owner)
-        //     console.log(owner)
-        //     let rol = owner.rol
-        //     let email = owner.email
-        //     if(rol === 'Premium'){
-        //         let productFound = await productService.getProductById(pid)
-        //         if(productFound.owner === email){
-        //           await productService.deleteProduct(pid);
-        //           console.log(`The product with id: ${pid} was deleted succesfully!`)
-        //           socketServer.emit('newData', product)  
-        //         }
-        //         else{
-        //             console.log(`The product with id: ${pid} could not be removed!`)
-        //             socketServer.emit('newData', product) 
-        //         }
-        //     }
-        //     else{
-        //       if(owner.rol === 'Premium'){
-        //         await productService.deleteProduct(pid);
-  
-        //         const deleteProductPremium = {
-        //           from: 'Coder Test - Delete Product Premium User ' + gmailAccount,
-        //           to: owner.email,
-        //           subject: "Correo de prueba coderhouse - programacion backend ",
-        //           html: "<div><h1>A product created by you was removed!</h1></div>",
-        //           attachments: []
-        //           }
-        //           transporter.sendMail(deleteProductPremium, (error, info) => {
-        //               if (error) {
-        //                   console.log(error);
-        //                   res.status(400).send({ message: "Error", payload: error })
-        //               }
-                      
-        //           })
-        //           console.log(`The product with id: ${pid} was deleted succesfully!`)
-        //           socketServer.emit('newData', product) 
-                 
-        //       }
-        //       else{
-        //         await productService.deleteProduct(pid);
-        //         console.log(`The product with id: ${pid} was deleted succesfully!`)
-        //         socketServer.emit('newData', product) 
-        //       }
-        //     }
-        // } catch (error) {
-        //     console.log('Error send message') ; 
-            
-        // } 
+       
         
     })
 

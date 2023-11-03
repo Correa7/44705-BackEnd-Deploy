@@ -1,3 +1,44 @@
+html {
+    font-family: 'Raleway', sans-serif;
+    background-size: 100%;
+    background-color: black;
+    box-shadow: 0 0 10% 10% black;
+    color: #dff2b0;
+}
+#navbarSupportedContent{
+    align-items: center;
+    justify-content: center;
+ }
+ body{
+    position: relative;
+    min-height: 100vh;
+    background-color: rgb(60, 38, 43);
+    background-image: url('https://img.freepik.com/fotos-premium/altavoz-tela-malla-detalle-tela-negra-amplificador_43029-1330.jpg?w=826');
+    font-family: 'Raleway', sans-serif;
+    color:rgb(225, 225, 176);
+}
+.navbar{
+    height: 60px;
+    padding-bottom: 15px;
+    font-family: 'Raleway', sans-serif;
+    color:rgb(225, 225, 176); 
+    background-color: black; 
+}
+.navbar a {
+    color:rgb(225, 225, 176);  
+}
+ p a h1 h2 h3 h4 h5 h6{
+    font-family: 'Raleway', sans-serif;
+ }
+ 
+ footer{
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+     background-color: black;
+   
+ }
+
 .title{
     display: flex;
     flex-direction:row;
@@ -7,20 +48,59 @@
     margin-top:25px;
     margin-bottom: 25px;
     margin-left: 50px;
-} 
+}  
 .box{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     padding: 5px;
-    margin-left: 50px; 
+    margin-left: 50px;
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(30px);
+    color: black;
+    border-radius: 5px; 
 }
 .form{
-    border: solid;
-    border-color: rgb(120, 151, 181);
     padding: 25px;
 }
 .message{
     color: red;
+}
+.cart-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.cartP{
+    color: aliceblue;
+    text-decoration: none;
+    padding-top: 10px;
+    margin-left: 5px;
+    font-family: 'Raleway', sans-serif;
+}
+.cart-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.cartP{
+    color: aliceblue;
+    text-decoration: none;
+    padding-top: 10px;
+    margin-left: 5px;
+    font-family: 'Raleway', sans-serif;
+}
+.btn{
+    background-color: rgb(60, 38, 43);
+    color: white;
+}
+.btn:hover{
+    color: rgb(60, 38, 43);
+    border: solid ;
+    border-color:rgb(60, 38, 43) ;
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(30px);
 }

@@ -8,3 +8,54 @@
 .mostrar {
     display: block;
 }
+html {
+    font-family: 'Raleway', sans-serif;
+    background-size: 100%;
+    background-color: black;
+    box-shadow: 0 0 10% 10% black;
+    color: #dff2b0;
+}
+#navbarSupportedContent{
+    align-items: center;
+    justify-content: center;
+ }
+ body{
+    position: relative;
+    min-height: 100vh;
+    background-color: rgb(60, 38, 43);
+    background-image: url('https://img.freepik.com/fotos-premium/altavoz-tela-malla-detalle-tela-negra-amplificador_43029-1330.jpg?w=826');
+    font-family: 'Raleway', sans-serif;
+    color:rgb(225, 225, 176);
+}
+.navbar{
+    height: 60px;
+    padding-bottom: 15px;
+    font-family: 'Raleway', sans-serif;
+    color:rgb(225, 225, 176); 
+    background-color: black; 
+}
+.navbar a {
+    color:rgb(225, 225, 176);  
+}
+ p a h1 h2 h3 h4 h5 h6{
+    font-family: 'Raleway', sans-serif;
+ }
+ 
+ footer{
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+     background-color: black;
+   
+ }
+ .btn{
+    background-color: rgb(60, 38, 43);
+    color: white;
+}
+.btn:hover{
+    color: rgb(60, 38, 43);
+    border: solid ;
+    border-color:rgb(60, 38, 43) ;
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(30px);
+}

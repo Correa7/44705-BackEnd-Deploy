@@ -15,7 +15,6 @@ dotenv.config({
     path: environment === 'production'? './src/config/.env.production':'./src/config/.env.development' 
 })
 
-// dotenv.config({path:'./src/config/.env.development'}) 
 
 module.exports = {
     port:process.env.PORT || 3000, 
@@ -32,6 +31,8 @@ module.exports = {
     twilioAuthToken: process.env.TWILIO_AUTH_TOKEN,
     twilioNumber: process.env.TWILIO_SMS_NUMBER,
     userCellNumber: process.env.CELL_NUMBER,
+    stripePublishableKey: process.env.STRIPE_APP_PUBLIC_KEY,
+    stripeSecretKey:process.env.STRIPE_APP_SECRET_KEY,
     environment: environment
 
 } 

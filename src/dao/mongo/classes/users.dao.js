@@ -22,6 +22,10 @@ class UserClass{
         const deleted = await UserModel.deleteOne({ _id: _id });
         return deleted;
       }
+      async createMany(data) {
+        const result = await UserModel.insertMany(data);
+        return result;
+      }
       async updateOne(_id,data) {
         let user ={
           firstName:data.firstName,

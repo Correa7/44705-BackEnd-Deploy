@@ -6,10 +6,38 @@ body{
     position: relative;
     min-height: 100vh;
     /* padding-bottom: 1em; */
+    background-color: rgb(218, 11, 11);
 }
+
 footer{
     width: 100%;
     position: absolute;
     bottom: 0;
-  
+    color:rgb(225, 225, 176);  
+}
+.navbar{
+    height: 60px;
+    padding-bottom: 15px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.btn-cart{
+    background-color: rgb(60, 38, 43);
+    color: white;
+}
+.btn-cart:hover{
+    color: rgb(60, 38, 43);
+    border: solid ;
+    border-color:rgb(60, 38, 43) ;
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(30px);
+}
+.cartP{
+    text-decoration: none;
+}
+.cartP :hover{
+    color: rgb(60, 38, 43);
+    border: solid ;
+    border-color:rgb(60, 38, 43) ;
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(30px);
 }

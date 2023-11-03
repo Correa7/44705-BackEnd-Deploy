@@ -1,8 +1,6 @@
 const ProductService  = require ('../services/products.service.js');
 const ProductDTO = require ('../dao/DTO/product.dto.js'); 
 const productService = new ProductService();
-// const productDTO = new ProductDTO();
-
 const UserService = require('../services/users.service');
 const Service = new UserService()
 const CustomError = require('../services/errors/CustomError.js');
@@ -144,10 +142,10 @@ const updateProduct = async (req, res) =>{
 const addManyProducts = async (req, res) => {
       try { 
         const data = req.body;
-        for(let e in data){
-          e.owner=req.session.user.email
+        for(let e of data){
+          e.owner = req.session.user.email
         }
-        const productCreated = await productService.createMany(data);
+        const productCreated = await productService.createMany(data); 
         return res.status(201).json({
           status: "success",
           msg: "product created",

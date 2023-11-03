@@ -25,147 +25,162 @@
     {{!-- Title --}}
     <title>{{title}}</title>
 </head>
-<body>
-    {{!-- NavBar  --}}
-    {{#if User}}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style=" padding-left: 40px;padding-right: 40px;">
-            <a class="navbar-brand" href="/">Home Logo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" style="align-items: center;justify-content: center;">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/views/products">Products<span class="sr-only">(current)</span></a>
-                    </li>
-                    {{!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li> --}}
-                    {{!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Products
+    <body>
+            {{!-- NavBar  --}}
+            {{#if User}}
+                <nav class="navbar navbar-expand-lg navbar-dark" style=" padding-left: 40px;padding-right: 40px;">
+                    <a class="navbar-brand" href="/">Home Logo</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" style="align-items: center;justify-content: center;">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="navbar-brand" href="/views/products">Products<span class="sr-only">(current)</span></a>
+                            </li> 
+                        </ul>   
+                    </div> 
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="navbar-brand" href="/views/chat">Chat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="/session/profile">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="/session/logout">Logout</a>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                        <a  id="{{user.cart}}" href="/views/cart" class="btn-cart cart-box m-4">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="25" 
+                                height="25"
+                                fill="currentColor"
+                                class="bi bi-cart"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                />
+                            </svg>
+                        
+                            <p class="cartP">{{cartQuantity}}</p>
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>  --}}
-                </ul>
-                 
-            </div>
-                <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="/session/profile">Profile</a>
-                <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="/session/logout">Logout</a>
-                <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="#">cart</a> 
-        </nav>
-    {{else if Premium}}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style=" padding-left: 40px;padding-right: 40px;">
-            <a class="navbar-brand" href="/">Home Logo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" style="align-items: center;justify-content: center;">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/views/products">Products<span class="sr-only">(current)</span></a>
-                    </li>
-                    {{!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li> --}}
-                    {{!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Products
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>  --}}
-                </ul>
-                 
-            </div>
-                <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="/session/profile">Profile</a>
-                <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="/session/logout">Logout</a>
-                {{!-- <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="/realTimeProducts">Realtime Products</a> --}}
-                <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="/views/cart">cart</a> 
-        </nav>
-    {{else if Admin}}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style=" padding-left: 40px;padding-right: 40px;">
-            <a class="navbar-brand" href="/">Home Logo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" style="align-items: center;justify-content: center;">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/views/products">Products<span class="sr-only">(current)</span></a>
-                    </li>
-                    {{!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li> --}}
-                    {{!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Products
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>  --}}
-                </ul>
-                 
-            </div>
-                <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="/api/admin">Admin Panel</a>
-                <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="/views/realTimeProducts">Realtime Products</a>
-                <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="/session/profile">Profile</a>
-                <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="/session/logout">Logout</a>
-        </nav>
-    {{else}}
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style=" padding-left: 40px;padding-right: 40px;">
-            <a class="navbar-brand" href="/">Home Logo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" style="align-items: center;justify-content: center;">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/views/products">Products<span class="sr-only">(current)</span></a>
-                    </li>
-                    {{!-- <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
-                    </li> --}}
-                    {{!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Products
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                        </div>
-                    </li>  --}}
-                </ul>
-                 
-            </div>
-                <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="/session/login">Login</a>
-                <a class="btn btn-outline-warning mt-2" href="/session/register">Register</a> 
-        </nav>
-    {{/if}}
+                    
+                </nav>
+            {{else if Premium}}
+                <nav class="navbar navbar-expand-lg navbar-dark" style=" padding-left: 40px;padding-right: 40px;">
+                    <a class="navbar-brand" href="/">Home Logo</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" style="align-items: center;justify-content: center;">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="navbar-brand" href="/views/products">Products<span class="sr-only">(current)</span></a>
+                            </li> 
+                        </ul>   
+                    </div> 
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="navbar-brand" href="/views/realTimeProducts">Real Time</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="navbar-brand" href="/views/chat">Chat</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="/session/profile">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="/session/logout">Logout</a>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                        <a  id="{{user.cart}}" href="/views/cart" class="btn-cart cart-box m-4">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="25"
+                                height="25"
+                                fill="currentColor"
+                                class="bi bi-cart"
+                                viewBox="0 0 16 16"
+                            >
+                                <path
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+                                />
+                            </svg>
+                        
+                            <p class="cartP">{{cartQuantity}}</p>
+                        </a> 
+                </nav>
+            {{else if Admin}}
+                <nav class="navbar navbar-expand-lg navbar-dark" style=" padding-left: 40px;padding-right: 40px;">
+                    <a class="navbar-brand" href="/">Home Logo</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" style="align-items: center;justify-content: center;">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="navbar-brand" href="/views/products">Products<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="navbar-brand" href="/api/docs" target="_blank">Docs<span class="sr-only">(current)</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="navbar-brand" href="/api/admin">Admin Panel</a>
+                            </li>
+                            <li class="nav-item active">
+                               <a class="navbar-brand" href="/views/realTimeProducts">Realtime Products</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="/session/profile">Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="navbar-brand" href="/session/logout">Logout</a>
+                            </li>
+                        
+                        </ul>
+                    </div>
+                </nav>
+            {{else}}
+                <nav class="navbar navbar-expand-lg navbar-dark" style=" padding-left: 40px;padding-right: 40px;">
+                    <a class="navbar-brand" href="/">Home Logo</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" style="align-items: center;justify-content: center;">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="navbar-brand" href="/views/products">Products<span class="sr-only">(current)</span></a>
+                            </li> 
+                        </ul>   
+                    </div> 
+                        <a class="navbar-brand" href="/session/login">Login</a>
+                        <a class="navbar-brand" href="/session/register">Register</a> 
+                </nav>
+            {{/if}}
+
+        <div class="box-body">
+                {{{body}}}
+        </div>
 
    
-
-    {{!-- Content --}}
-    {{{body}}}
+   
         <br><br><br>
 
       
-            <footer class="bg-light text-center text-white">
+            <footer class="text-center">
 
             <!-- Copyright -->
             <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
@@ -179,12 +194,12 @@
         
 
     {{!-- scripts --}}
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js" integrity="sha384-sCI3dTBIJuqT6AwL++zH7qL8ZdKaHpxU43dDt9SyOzimtQ9eyRhkG3B7KMl6AO19" crossorigin="anonymous"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/brands.js" integrity="sha384-sCI3dTBIJuqT6AwL++zH7qL8ZdKaHpxU43dDt9SyOzimtQ9eyRhkG3B7KMl6AO19" crossorigin="anonymous"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c" crossorigin="anonymous"></script>
 
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-</body>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    </body>
 </html>

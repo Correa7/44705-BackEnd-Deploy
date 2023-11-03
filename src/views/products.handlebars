@@ -1,49 +1,26 @@
-<div class="box">
-  <div><h1>PRODUCTS</h1></div>
+<br>
 
+<div class="box">
+  {{!-- <div><h2>PRODUCTS</h2></div> --}}
   {{#if user.firstName}}
-    <div class="d-flex justify-content-between m-4">
-      <h1 class="">Welcome {{user.firstName}}</h1>
-      <div>
-        <a href="/session/logout" class="m-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            fill="currentColor"
-            class="bi bi-box-arrow-left"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M6 12.5a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5h-8a.5.5 0 0 0-.5.5v2a.5.5 0 0 1-1 0v-2A1.5 1.5 0 0 1 6.5 2h8A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5h-8A1.5 1.5 0 0 1 5 12.5v-2a.5.5 0 0 1 1 0v2z"
-            />
-            <path
-              fill-rule="evenodd"
-              d="M.146 8.354a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L1.707 7.5H10.5a.5.5 0 0 1 0 1H1.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3z"
-            />
-          </svg>
-        </a>
-        <a id="{{user.cart}}" href="/views/cart" class="userCart m-4">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            fill="currentColor"
-            class="bi bi-cart"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
-            />
-          </svg>
-        </a>
+    <div class="user-box">
+      <div class="d-flex justify-content-between">
+        <h2 class="">Welcome  {{user.firstName}} {{user.lastName}}</h2>
+        <a  id="{{user.cart}}" href="/cart" class="userCart m-4"></a>
       </div>
     </div>
   {{/if}}
+  
+
+  <div class="pagination-box-totalLinks">
+      {{#each links}}
+        <a class="btn" href="{{this.href}}">{{this.label}}</a>
+      {{/each}}
+    </div> 
+    <br>
 
   <div class="contenedor-cards" id="z-cards">
-    {{#each products}}
+    {{#each products}} 
       {{! <div class="card" style="width: 15rem;"> }}
       <div class="card">
         <img src="{{this.thumbnail}}" class="card-img-top" alt="..." />
@@ -57,15 +34,29 @@
         </div>
         <div class="card-body">
 
-          <button
+          <button 
             id="{{this._id}}"
-            class="btn btn-primary"
-            onclick="addProductToCart('{{this._id}}')"
+            class="btn "
+            onclick="addProductToCart('{{this._id}}')" 
           >Add to Cart</button>
         </div>
       </div>
     {{/each}}
-  </div><br /><br />
+  </div>
+  <br>
+  
+  <div class="pagination-box">
+    <div class="pagination-box-links">
+      {{#if pagination.hasPrevPage}}
+        <a class="pagination-links" href="/views/products/?page={{pagination.prevPage}}"><p>⇦</p><p>{{pagination.prevPage}}</p></a>
+      {{/if}} 
+      <a class="pagination-links" href="#"><p>{{pagination.page}}</p></a>
+      {{#if pagination.hasNextPage}}
+        <a class="pagination-links" href="/views/products/?page={{pagination.nextPage}}"><p>{{pagination.nextPage}}</p><p>⇨</p></a>
+      {{/if}}
+    </div>
+  </div>
+  <br>
   <div class="data-box">
     <span> totalDocs:{{pagination.totalDocs}}</span>
     <span>limit:{{pagination.limit}}</span>
@@ -76,29 +67,6 @@
     <span>hasNextPage:{{pagination.hasNextPage}}</span>
     <span>prevPage:{{pagination.prevPage}}</span>
     <span>nextPage:{{pagination.nextPage}}</span>
-  </div>
-  <div class="pagination-box">
-    <div class="pagination-box-links">
-      {{#if pagination.hasPrevPage}}
-        <a
-          class="pagination-links"
-          href="/products/?page={{pagination.prevPage}}"
-        ><p>⬅</p><p>{{pagination.prevPage}}</p></a>
-      {{/if}}
-      <a class="pagination-links" href="#"><p>{{pagination.page}}</p></a>
-      {{#if pagination.hasNextPage}}
-        <a
-          class="pagination-links"
-          href="/products/?page={{pagination.nextPage}}"
-        ><p>{{pagination.nextPage}}</p><p>➡</p></a>
-      {{/if}}
-    </div>
-    <div class="pagination-box-totalLinks">
-      {{#each links}}
-        <a href="{{this.href}}">{{this.label}}</a>
-      {{/each}}
-    </div>
-
   </div>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

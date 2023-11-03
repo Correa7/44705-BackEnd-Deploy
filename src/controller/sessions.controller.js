@@ -1,10 +1,10 @@
+const cartService = require('../services/carts.service.js');
+
 
 const getApiSession = (req,res)=>{
   const data = req.session.user
   res.send(JSON.stringify(data))
 }
-
-
 const sessionGetRegister = (req, res) => {
   res.status(200).render("register", {
     style: "register.css",
@@ -67,13 +67,20 @@ const sessionPostLogin = async (req, res) => {
     res.status(200).render('profile', data)
 
 }
-const sessionGetProfile = (req, res) => {
+const sessionGetProfile = async (req, res) => {
     let session = req.session.user
     let rol = req.session.user.rol
+    let cartFound = await cartService.getCartById(session.cart)
+    let quantity= 0 
+    cartFound.products.reduce((acum, item) => {
+    quantity = quantity + item.quantity
+    }, {})
+
     const data={
         title:'Profile',
         style:'profile.css',
-        data:session
+        data:session,
+        cartQuantity:quantity
     }
     data[rol]= session
     res.render('profile', data) 

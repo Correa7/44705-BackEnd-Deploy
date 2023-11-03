@@ -53,7 +53,7 @@ const adminPanelRender = async (req,res)=>{
         res.status(200).render('adminPanel', {
             style:'adminpanel.css',
             title:'Admin Panel',
-            message:'Test Admin Panel ok!',
+            message:'Admin Panel',
             Admin:req.session.user,
             active: active,
             inactive: inactive
@@ -111,6 +111,7 @@ const adminRolUserById = async (req,res)=>{
             return res.status(201).json({
                 status: 'success',
                 msg: 'User update rol: Premium',
+                payload:user
             }); 
         }else{
             user.rol= 'User'
@@ -118,6 +119,7 @@ const adminRolUserById = async (req,res)=>{
             return res.status(201).json({
                 status: 'success',
                 msg: 'User update rol: User',
+                payload:user
             });
         }
     }

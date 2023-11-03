@@ -30,8 +30,6 @@ function isAdmin (req, res, next) {
     return res.status(403).render('error', { error: 'Authorization error! You must have a User or Premium role to access this page.', style:'error404.css',
     title:'Authorization error', session:session, User:req.session.user });
   }
-
-
   function goToLogin(req, res, next){
     if (req.session?.user?.email) {
       return next();

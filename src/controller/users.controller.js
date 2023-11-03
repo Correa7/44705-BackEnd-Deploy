@@ -2,9 +2,9 @@ const UserService = require('../services/users.service');
 const Service = new UserService()
 const UserAdminDTO = require('../dao/DTO/users.admin.dto');
 const cartService = require('../services/carts.service');
-// const cartService = new CartService() 
 const nodemailer = require('nodemailer')
 const {secret,gmailAccount, gmailAppPass} = require('../config/env.config')
+
 const transporter = nodemailer.createTransport({
     service:'gmail',
     port: 587,
@@ -44,7 +44,6 @@ const getUser = async (req,res)=>{
     });
   }
 }
-
 const getUserById = async (req, res) => {
     try {
         const uid = req.params.uid;
@@ -70,11 +69,9 @@ const getUserById = async (req, res) => {
       });
     }
 }
-
 const postUser = (req, res) => {
     res.redirect('/session/login')
 } 
-
 const rolUserById = async (req,res)=>{
     try{
         let _id = req.params.uid
@@ -148,7 +145,6 @@ const adminRolUserById = async (req,res)=>{
         });
     }
 }
-
 const delUserById =  async (req, res) => {
     try {
     const uid = req.params.uid;
@@ -169,7 +165,6 @@ const delUserById =  async (req, res) => {
     });
     }
 }
-
 const delUsers = async (req,res)=>{
     try {
         const users = await Service.getAll();
@@ -229,8 +224,6 @@ const delUsers = async (req,res)=>{
         });
         }
 }
-
-
 const putUserById = async (req, res) => { 
     try {
         const uid = req.params.uid;
@@ -301,9 +294,7 @@ const deleteDocuments = async (req,res) => {
         
         user.documents= []
         await user.save()
-         console.log(user)
-        
-        return res.status(200).send('Route :api/users/:uid/document delete method')
+        return res.status(200).send({message:'Route :api/user/:uid/document delete method', payload:user})
     }
     catch(e){
         console.log(e);

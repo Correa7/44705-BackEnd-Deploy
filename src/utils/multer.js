@@ -61,7 +61,7 @@ function usersUploader(){
         },
         {
             name: 'accountStatus', maxCount: 1
-        }
+        } 
     ])
 
     

@@ -18,7 +18,7 @@ router.use(express.urlencoded({ extended: true }));
 
 router.get("/", getWithQuerys);
 router.get("/:pid", isAdminPrimium, getProductById);  
-router.post("/", addProduct);
+router.post("/",goToLogin, isAdminPrimium, addProduct);
 router.post("/many",goToLogin,isAdminPrimium, addManyProducts);
 router.delete("/:pid",goToLogin,isAdminPrimium, deleteProduct); 
 router.put("/:id",goToLogin,isAdminPrimium,updateProduct);

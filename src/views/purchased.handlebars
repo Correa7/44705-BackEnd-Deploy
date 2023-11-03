@@ -1,14 +1,53 @@
-<div class="box">
-    <h3>Thank you!</h3>
+<br><br>
 
-    <h5>Your purchase was successfuly!</h5>
-
-    <h5>Your ticket: {{newTk.id}}   with a amount of ${{newTk.amount}}</h5>
-
-    <p>We will send your ticket to your mail too {{newTk.purchaser}}.</p>
- 
-
-    <a href="/session/profile">Back to profile</a>
-
+<div class="container">
+    <div class="ticket">
+        <h5>Thank you {{newTk.purchaser}}</h5>
+        <h6>your ticket was generated, </h6>
+        <h6>to complete the purchase click on buy!</h6><br>
+        <h6>Your ticket ID: <strong>{{newTk.id}}</strong></h6>
+    </div>
+    <div class="box"> 
+        <div class="box-total">
+            <h6>Total: $ {{amount}}</h6>
+            <h6>Total Items:  {{totalquantity}}</h6> 
+        </div>
+        <div class="box-table"> 
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                    <th scope="col">title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                
+                    </tr>
+                </thead>
+                <tbody class="tbody">
+                    {{#each products}} 
+                    <tr>
+                    <td>{{this.title}}</td>
+                    <td>$<strong>{{this.prices}}</strong></td>
+                    <td>{{this.quantity}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div><br>
+        <form action="/api/cart/chargeTicket/?amount={{amount}}" method="POST"> 
+            <script 
+                src="https://checkout.stripe.com/checkout.js" class="stripe-button" 
+                data-key="{{ stripePublishableKey}}"
+                data-amount='{{amount}}00'
+                data-name="Tiket CoderHouse 44705"
+                data-description="Use '4242 4242 4242 4242' for card #" 
+                data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+                data-locale="auto">
+            </script> 
+            <script>
+                // Hide default stripe button
+                document.getElementsByClassName('stripe-button-el')[0].style.display='none';
+            </script>
+            <button type="submit" class="btn btn-outline-success btn-block">Pay with Stripe</button>
+        </form>
+    </div>
 </div>
-<br><br><br><br>

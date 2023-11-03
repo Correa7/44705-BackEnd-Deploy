@@ -45,7 +45,8 @@ app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerSpecs));
 
 
 // Routes
-              
+const {homeView} = require('./controller/views.controller')
+app.get('/',homeView)           
 //Views
 const routesViews = require('./routes/views.route');
 app.use('/views', routesViews);
@@ -66,7 +67,7 @@ const sessions = require('./routes/sessions.route');
 app.use('/session', sessions);
 // auth.pasport
 const authPassport = require('./routes/passport.route');
-app.use('/auth', authPassport);
+app.use('/auth', authPassport); 
 // Mailing
 const emailRoute = require('./routes/email.route');
 app.use('/api/email', emailRoute);
@@ -96,29 +97,6 @@ connectSocket(server)
 
 server.listen(port, ()=>{
     console.log('Server is runing on port: ' + port) 
- 
-});
-
-app.get('/', (req,res)=> {  
-    if(req.session.user){
-        let session = req.session.user
-        let rol = req.session.user.rol 
-        const data={
-            title:'ecommerce backend',
-            message:'Ecommerce backend  Index',
-            style:'style.css',
-        }
-        data[rol]= session
-        res.render('index', data) 
-    }
-    else{
-        const data={
-            title:'ecommerce backend',
-            message:'Ecommerce backend  Index',
-            style:'style.css',
-        }
-        res.render('index', data) 
-    }
 });
 
 app.get("*", (req, res) => {

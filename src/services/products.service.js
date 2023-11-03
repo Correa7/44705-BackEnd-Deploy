@@ -103,7 +103,7 @@ class ProductService {
     async updateStockProduct(_id, product) {
         try {
             if (!_id) throw new Error('Invalid _id');
-            // this.productValidation(product.title, product.description, product.price, product.thumbnail, product.code, product.stock, product.category);
+            
             const updatedProduct = await ProductMethods.updateOne(_id, {stock:product});
             console.log(`The stock product with id: ${_id} was updated succesfully!`);
             return updatedProduct;
@@ -141,11 +141,10 @@ class ProductService {
         for (const id of arr) {
           const product = await this.getProductById(id);
           productsData.push(product);
-        }
-      
+        }  
         return productsData;
     }
-
+ 
 }
 
 module.exports = ProductService 

@@ -1,14 +1,55 @@
 html {
     font-family: 'Raleway', sans-serif;
     background-size: 100%;
+    
     background-color: black;
     box-shadow: 0 0 10% 10% black;
     color: #dff2b0;
 }
+#navbarSupportedContent{
+    align-items: center;
+    justify-content: center;
+ }
+ body{
+     position: relative;
+     min-height: 100vh;
+     background-color: rgb(60, 38, 43);
+     background-image: url('https://img.freepik.com/fotos-premium/altavoz-tela-malla-detalle-tela-negra-amplificador_43029-1330.jpg?w=826');
+     font-family: 'Raleway', sans-serif;
+     color:rgb(225, 225, 176);
+ }
+ .navbar{
+     height: 60px;
+     padding-bottom: 15px;
+     font-family: 'Raleway', sans-serif;
+     color:rgb(225, 225, 176);
+     background-color: black; 
+    
+ }
+ .navbar a {
+     color:rgb(225, 225, 176);  
+ }
+ p a h1 h2 h3 h4 h5 h6{
+    font-family: 'Raleway', sans-serif;
+ }
+ 
+ footer{
+     width: 100%;
+     position: absolute;
+     bottom: 0;
+     background-color: black;
+   
+ }
 
-.title{
-    color: red;
+.user-box{
+    display: flex;
+    flex: column;
+    margin-top: 15px;
+    align-items: flex-start;
+    margin-left: 60px;
+
 }
+
 .box{
     display: flex;
     flex-direction: column;
@@ -16,14 +57,11 @@ html {
     align-items: center; 
     padding: 20px; 
 }
-.box h1 {
-    color: rgb(90, 142, 209);
-}
+
 
 .contenedor-cards{
     width: 100%;
 	padding: 20px;
-	margin-top: 30px;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-column-gap: 20px;
@@ -41,6 +79,8 @@ html {
     border: solid rgb(205, 203, 199) ;
     transition: all 0.25s;
     font-family: sans-serif;
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(30px);
 }
 .card:hover {
     transform: translateY(-10px);
@@ -50,63 +90,106 @@ html {
     width: 220px;
     height: 220px;
 }
-
+.card-title{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .card-text{
     overflow: auto;
     max-height: 100%;
     width: calc(100% + 17px);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-.pagination-box-links{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-}
+
 .pagination-box{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    background-color: rgb(60, 38, 43);
+    padding: 5px;
+    border-radius: 5px;
+    height: 40px;  
 }
-.pagination-box-totalLinks{
+.pagination-box-links{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-top: 40px;
-}
-.pagination-box-totalLinks a{
-    font-size: 20px;
-    margin-left: 5px;
-    margin-right: 5px;
-}
-.data-box{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin: 20px;
-}
-.data-box span{
-    font-size: 15px;
-    margin-left: 5px;
-    margin-right: 5px;
 }
 .pagination-links{
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    
-
+    text-decoration: none;
+    color: white;
+    margin-left: 20px;
+    font-family: 'Raleway', sans-serif;
 }
 
 .pagination-links p {
     font-size: 20px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 20px;
+    font-family: 'Raleway', sans-serif;
+    color:rgb(225, 225, 176);
+
+
+}
+.pagination-box-totalLinks{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px;
+}
+.pagination-box-totalLinks a{
+    margin-left: 20px;
+    font-family: 'Raleway', sans-serif;
+    color:rgb(225, 225, 176);
+    /* height: 40px; */
+    font-size: 20px;
+}
+.data-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+   
+}
+.data-box span{
+    font-size: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 
+.cart-box{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+.cartP{
+    color: aliceblue;
+    text-decoration: none;
+    padding-top: 10px;
+    margin-left: 5px;
+}
+.user-box{
+    display: flex;
+    flex-direction: row;
+}
+.btn{
+    background-color: rgb(60, 38, 43);
+    color: white;
+}
+.btn:hover{
+    color: rgb(60, 38, 43);
+    border: solid ;
+    border-color:rgb(60, 38, 43) ;
+    background: hsla(0, 0%, 100%, 0.8);
+    backdrop-filter: blur(30px);
+}
+.btn-cart{
+    color: white;
+}
+.btn-cart:hover{
+    color: rgb(230, 14, 64);
+}

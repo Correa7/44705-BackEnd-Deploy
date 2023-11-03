@@ -3,7 +3,6 @@ const { goToLogin, isUserPrimium,isAdminPrimium } = require("../middlewares/auth
 const {
     productsView,
     cartView,
-    // homeView,
     chatView,
     RealTimeProductsView,
     getViewsError
@@ -11,7 +10,6 @@ const {
 
 const router = express.Router();
 
-// router.get('/', homeView);
 router.get('/products', productsView);
 router.get('/cart', goToLogin, isUserPrimium, cartView);
 router.get("/chat", goToLogin, isUserPrimium, chatView);

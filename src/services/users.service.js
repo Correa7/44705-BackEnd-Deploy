@@ -20,7 +20,11 @@ class UserService{
       async createOne(data) {
         const user = await UserMethods.createOne(data);
         return user;
-      } 
+      }
+      async createMany(data) {
+        const result = await UserMethods.createMany(data);
+        return result;
+    } 
       async deletedOne(_id) {
         const deleted = await UserMethods.deletedOne({ _id: _id }); 
         return deleted;
