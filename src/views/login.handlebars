@@ -1,8 +1,4 @@
 <section class="vh-100"><br>
-  <div class="container">
-    <h5> {{message}}</h5> 
-  </div>
-  <br>
   <div class="container"> 
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-md-9 col-lg-6 col-xl-5" >
@@ -12,18 +8,20 @@
       <div class="col-md-9 col-lg-6 col-xl-5">
         {{!-- Form --}}
         <form method="post" action="/session/login" >
-          <div class="sign-title">
-            <p class="lead fw-normal mb-0 me-3">Sign in with</p>
-             <button type="button" class="btn btn-link btn-floating mx-1" style=" width: 40px; height: 40px;">
-                <a  href="/auth/github"><i class="fab fa-github"></i></a> 
-              </button>
-          </div>
-          <br>
-
-          <div class="d-flex flex-row">
-            <p class="text-center fw-bold mx-3 mb-0">Or</p>
-          </div><br>
-
+          {{#if message}}
+               <br><h5>{{message}}</h5><br>
+          {{else}}
+              <div class="sign-title">
+                <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+                <button type="button" class="btn btn-link btn-floating mx-1" style=" width: 40px; height: 40px;">
+                    <a  href="/auth/github"><i class="fab fa-github"></i></a> 
+                  </button>
+              </div>
+              <br>
+              <div class="d-flex flex-row">
+                <p class="text-center fw-bold mx-3 mb-0">Or</p>
+              </div><br>
+          {{/if}}
           <!-- Email input -->
           <div class="form-outline mb-4">
             <input type="email" id="email" class="form-control form-control-lg"
