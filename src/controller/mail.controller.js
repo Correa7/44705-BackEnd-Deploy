@@ -117,7 +117,7 @@ const sendResetPass = async (req,res)=>{
                         <h3>To reset your password, please follow the link below:</h3>
                         <br>
                         <br>
-                        <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="https://44705-backend-deploy-production.up.railway.app//api/email/reset-form/?token=${token}">Click here to Reset your Password</a>
+                        <a class="btn btn-outline-primary mt-2 ms-2 me-2" href="https://44705-backend-deploy-production.up.railway.app/api/email/reset-form/?token=${token}">Click here to Reset your Password</a>
                         <br>
                         <br>
                         <br>
