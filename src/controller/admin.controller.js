@@ -51,7 +51,7 @@ const adminPanelRender = async (req,res)=>{
             }
         })
         res.status(200).render('adminPanel', {
-            style:'adminpanel.css',
+            style:'adminPanel.css',
             title:'Admin Panel',
             message:'Admin Panel',
             Admin:req.session.user,
